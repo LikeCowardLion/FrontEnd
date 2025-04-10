@@ -16,11 +16,11 @@
     flex-grow: 1;
 }
 
-.profileImage{
+.SideImage{
     width: 100px;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 40px auto 14px;
+    border-radius: 50%;
 }
 
 .sidebarName{

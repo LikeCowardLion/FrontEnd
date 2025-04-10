@@ -1,0 +1,83 @@
+.profileCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 700px;
+    height: 431px;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 32px;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    font-family: 'Pretendard', sans-serif;
+}
+
+.profileTitle {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+}
+
+.editIcon {
+    position: absolute;
+    top: 20px;
+    right: 28px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.profileLeft {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.profileImage {
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 16px;
+    margin-bottom: 32px;
+}
+
+.profileName {
+    font-size: 24px;
+    color: #333333;
+}
+
+.profileDivider {
+    width: 1px;
+    height: 300px;
+    background-color: #E4E4E4;
+    margin: 0 63px;
+}
+
+.profileRight {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.profileItem {
+    text-align: left;
+    display: flex;
+    font-size: 20px;
+    color: #333;
+}
+
+.profileItem span:first-child {
+    width: 62px;
+    font-weight: 500;
+    color: #333333;
+}
+
+.profileItem span:last-child {
+    margin-left: 17px;
+    color: #646464;
+}

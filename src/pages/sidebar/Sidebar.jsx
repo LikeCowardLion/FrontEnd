@@ -21,7 +21,7 @@ export default function Sidebar() {
             <div className="sidebarWrapper">
                 <h1 className="sidebarTitle">MYMEDI</h1>
 
-                <img src="/logo192.png" alt="Profile" className="profileImage" />
+                <img src={`${publicUrl}/images/image/profile.png`} alt="Profile" className="SideImage"/>
                 <h3 className="sidebarName">아무개 님</h3>
 
                 <ul className="sidebarList">
