@@ -19,7 +19,7 @@
 }
 
 .react-calendar__navigation {
-    position: relative; /* 자식 absolute 기준 */
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
