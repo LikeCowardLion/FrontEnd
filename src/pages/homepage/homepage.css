@@ -1,0 +1,33 @@
+/* 상위 컨테이너 */
+.homepage-container {
+    width: 1920px;
+    height: 1080px;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+    padding: 60px 80px;
+    background-color: #EFF4EA;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* 캘린더 영역 */
+.calendar-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* 아래로 정렬 */
+    margin-bottom: 69px;
+}
+
+
+
+/* 오른쪽 카드 묶음 */
+.info-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* 아래에서 시작하게 */
+    align-items: flex-start;
+    gap: 52px;
+    margin-bottom: 69px;
+    margin-left: auto;
+}

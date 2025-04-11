@@ -1,0 +1,66 @@
+.gradeCard {
+    width: 700px;
+    height: 457px;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 32px;
+    box-sizing: border-box;
+    font-family: 'Pretendard-SemiBold', sans-serif;
+    position: relative;
+}
+
+.gradeTitle {
+    font-size: 24px;
+    color: #444444;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.gradeContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.gradeText {
+    margin: auto;
+    font-size: 128px;
+    font-family: 'Pretendard-Bold', sans-serif;
+    color: #FC7A7A;
+}
+
+.gradeImage {
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+.gradeNotice {
+    text-align: left;
+    margin-top: 30px;
+    margin-left: 10px;
+    font-size: 18px;
+    color: #444444;
+}
+
+.gradeNotice span {
+    color: #f58220;
+    font-weight: 600;
+}
+
+.gradeProgressBar {
+    width: 100%;
+    height: 45px;
+    background-color: #e5e7eb;
+    border-radius: 12px;
+    margin-top: 12px;
+    overflow: hidden;
+}
+
+.gradeProgressFill {
+    height: 100%;
+    width: 75%; /* 예시값: 등급 진행도에 따라 조절 */
+    background-color: #FC7A7A;
+    border-radius: 12px 0 0 12px;
+}
