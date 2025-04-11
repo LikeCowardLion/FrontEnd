@@ -1,8 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Sidebar from './pages/sidebar/Sidebar'
-import HomeCalendar from './pages/homepage/Calendar/HomeCalendar'
-import ProfileCard from './pages/homepage/MyProfile/ProfileCard'
+import HomePage from './pages/homepage/Homepage';
 
 function App() {
   return (
@@ -10,7 +9,7 @@ function App() {
       <div className="container">
         <Sidebar />
         <div className="others">
-            <ProfileCard />
+            <HomePage />
         </div>
       </div>
     </div>

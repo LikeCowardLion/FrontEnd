@@ -17,15 +17,15 @@
 }
 
 .SideImage{
-    width: 100px;
+    width: 120px;
     display: block;
-    margin: 40px auto 14px;
+    margin: 40px auto 5px;
     border-radius: 50%;
 }
 
 .sidebarName{
-    font-size: 16px;
-    margin-bottom: 10px;
+    font-size: 18px;
+    margin-bottom: 30px;
     font-weight: normal;
 }
 

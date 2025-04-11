@@ -44,3 +44,8 @@
   flex: 4;
   background-color: #EFF4EA;
 }
+
+html, body {
+  overflow: hidden;
+  height: 100%;
+}
