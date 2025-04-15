@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaCaretUp } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import "./sidebar.css";
 
 export default function Sidebar() {
@@ -7,14 +8,20 @@ export default function Sidebar() {
     const [activeIndex, setActiveIndex] = useState(null);
     const [isDropdown, setIsDropdown] = useState(false);
     const [selectedDropdown, setSelectedDropdown] = useState(null);
+    const navigate = useNavigate();
 
     const menuItems = [
-        { name: "홈", defaultIcon: "home_icon.png", activeIcon: "home_color_icon.png" },
-        { name: "통계", defaultIcon: "graph_icon.png", activeIcon: "graph_color_icon.png", hasDropdown: true },
-        { name: "랭킹", defaultIcon: "ranking_icon.png", activeIcon: "ranking_color_icon.png" },
+        { name: "홈", path: "/home", defaultIcon: "home_icon.png", activeIcon: "home_color_icon.png" },
+        { name: "통계", path: "/statistics", defaultIcon: "graph_icon.png", activeIcon: "graph_color_icon.png", hasDropdown: true },
+        { name: "랭킹", path: "/ranking", defaultIcon: "ranking_icon.png", activeIcon: "ranking_color_icon.png" },
     ];
 
-    const dropdownItems = ["전체", "대근육", "소근육", "유연성"];
+    const dropdownItems = [
+        { label: "전체", path: "total" },
+        { label: "대근육", path: "upper" },
+        { label: "소근육", path: "lower" },
+        { label: "유연성", path: "flexibility" },
+    ];
 
     return (
         <div className="sidebar">
@@ -34,6 +41,7 @@ export default function Sidebar() {
                                     if (item.hasDropdown) {
                                         setIsDropdown(!isDropdown);
                                     } else {
+                                        navigate(item.path);
                                         setIsDropdown(false);
                                     }
                                 }}
@@ -55,9 +63,12 @@ export default function Sidebar() {
                                         <li
                                             key={subIndex}
                                             className={`dropdownItem ${selectedDropdown === subIndex ? "active" : ""}`}
-                                            onClick={() => setSelectedDropdown(subIndex)}
+                                            onClick={() => {
+                                                setSelectedDropdown(subIndex);
+                                                navigate(`/statistics/${subItem.path}`);
+                                            }}
                                         >
-                                            {subItem}
+                                            {subItem.label}
                                         </li>
                                     ))}
                                 </ul>

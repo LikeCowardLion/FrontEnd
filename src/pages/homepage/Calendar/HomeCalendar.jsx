@@ -71,7 +71,7 @@ export default function HomeCalendar() {
                     ) : (
                         activityList.map((activity, i) => (
                             <div className="activityItem" key={i}>
-                                <span className="dot" />
+                                <span className="calendar-dot" />
                                 <span className="activityText">[{activity.type}] {activity.title}</span>
                                 <span className="activityTime">{activity.time}</span>
                             </div>
