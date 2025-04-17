@@ -1,0 +1,117 @@
+.ranking-wrapper {
+    padding: 28px 50px 69px 60px;
+    min-height: 100vh;
+    flex-shrink: 0;
+    box-sizing: border-box;
+  }
+  
+  .section-tabs {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #3A3A3A;
+  }
+  
+  .section-tab {
+    cursor: pointer;
+    padding-bottom: 8px;
+  }
+  
+  .section-tab.active {
+    color: #4C956C;
+    border-bottom: 3px solid #4C956C;
+  }
+  
+  .ranking-columns {
+    display: flex;
+    gap: 32px;
+  }
+  .ranking-columns.gap-wide {
+    gap: 575px; /* 유연성일 때 gap 크게 */
+  }
+
+  .ranking-card-wrapper {
+    width: 510px;
+    gap: 42px;
+  }
+  .ranking-container{
+    width: 510px;
+    height: 850px;
+    border-radius: 0px 12px 12px 12px;
+  }
+  .ranking-card {
+    background-color: #ffffff;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    border-radius: 0px 12px 12px 12px;
+    padding: 16px 17px 16px 18px;
+    box-sizing: border-box;
+  }
+  
+  .ranking-title {
+    background-color: #A0DEA0;
+    color: #154B11;
+    font-size: 20px;
+    font-weight: 600;
+    width: 200px;
+    padding: 16px;
+    border-radius: 12px 12px 0 0;
+    text-align: center;
+  }
+  
+  .ranking-box {
+    border-radius: 0px 12px 12px 12px;
+    flex-grow: 1;
+    overflow-y: auto;
+  }
+
+  .ranking-item,
+  .ranking-my-score,
+  .ranking-invent {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 2fr 1fr;
+    padding: 15px;
+    font-size: 16px;
+    color: #3A3A3A;
+    text-align: center;
+  }
+  
+
+  .ranking-invent{
+    background-color: #F6F6F6;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .ranking-my-score {
+    border-radius: 0px 0px 12px 12px;
+    border: 5px solid #A0DEA0;
+    font-weight: 600;
+  }
+
+  .ranking-item {
+    border-top: 1px solid #F6F6F6;
+  }
+  
+  .ranking-list {
+    overflow-y: auto;
+  }
+
+  .ranking-box::-webkit-scrollbar {
+    width: 5px; /* 세로 스크롤 너비 */
+  }
+  
+  .ranking-box::-webkit-scrollbar-thumb {
+    background-color: #A0DEA0; /* 스크롤 핸들 색상 */
+    border-radius: 10px;
+  }
+  
+  .ranking-box::-webkit-scrollbar-track {
+    background-color: #F6F6F6; /* 스크롤 트랙 배경 */
+    border-radius: 6px;
+  }
+  
+  
+  

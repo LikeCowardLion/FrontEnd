@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaCaretUp } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import "./sidebar.css";
 
 export default function Sidebar() {
@@ -7,6 +8,8 @@ export default function Sidebar() {
     const [activeIndex, setActiveIndex] = useState(null);
     const [isDropdown, setIsDropdown] = useState(false);
     const [selectedDropdown, setSelectedDropdown] = useState(null);
+
+    const navigate = useNavigate();
 
     const menuItems = [
         { name: "홈", defaultIcon: "home_icon.png", activeIcon: "home_color_icon.png" },
@@ -35,6 +38,7 @@ export default function Sidebar() {
                                         setIsDropdown(!isDropdown);
                                     } else {
                                         setIsDropdown(false);
+                                        if (item.name === "홈") navigate("/main");
                                     }
                                 }}
                             >
@@ -51,15 +55,22 @@ export default function Sidebar() {
 
                             {item.hasDropdown && isDropdown && activeIndex === index && (
                                 <ul className="dropdownMenu">
+
                                     {dropdownItems.map((subItem, subIndex) => (
                                         <li
                                             key={subIndex}
                                             className={`dropdownItem ${selectedDropdown === subIndex ? "active" : ""}`}
-                                            onClick={() => setSelectedDropdown(subIndex)}
+                                            onClick={() => {
+                                                setSelectedDropdown(subIndex);
+                                                if (subItem !== "전체") {
+                                                    navigate(`/stats/${subItem}`);
+                                                }
+                                            }}
                                         >
                                             {subItem}
                                         </li>
                                     ))}
+                                    
                                 </ul>
                             )}
                         </React.Fragment>
