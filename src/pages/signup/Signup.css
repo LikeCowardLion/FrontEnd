@@ -1,0 +1,175 @@
+body {
+  background-color: #EFF4EA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.text-field {
+  font-size: 15px;
+  font-weight: bold;
+  text-align: left;
+  margin-left: 35px;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.s-text-field {
+  font-size: 12px;
+  text-align: left;
+  margin-left: 35px;
+  color: #A1A1A1;
+}
+
+.signup-container {
+  width: 510px;
+  background-color: white;
+  padding: 40px 20px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.signup-title {
+  font-size: 48px;
+  font-weight: bold;
+  color: #2EB865;
+  margin-bottom: 35px;
+}
+
+.input-field {
+  width: 426px;
+  padding: 13px;
+  border: 1px solid #959595;
+  border-radius: 5px;
+}
+
+.pswd-input-field {
+  width: 426px;
+  padding: 13px;
+  border: 1px solid #959595;
+  border-radius: 5px;
+}
+
+.email-input-field {
+  width: 325px;
+  padding: 13px;
+  border: 1px solid #959595;
+  border-radius: 5px;
+}
+
+.email-check-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.check-button {
+  padding: 10px 15px;
+  width: 90px;
+  height: 44px;
+  background-color: #2EB865;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.check-button:hover {
+  background-color: #2b9957;
+}
+
+.row-group {
+  display: flex;
+  justify-content: center;
+  gap: 26px;
+  margin-bottom: 12px;
+}
+
+.body-row-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.age-input-field {
+  width: 180px;
+  padding: 13px;
+  border: 1px solid #959595;
+  border-radius: 5px;
+}
+
+.gender-group {
+  display: flex;
+  width: 220px;
+  height: 44px;
+}
+
+.gender {
+  width: 110px;
+  padding: 13px 45px;
+  border: 1px solid #959595;
+  background-color: white;
+  color: #333;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.gender.selected {
+  background-color: #2EB865;
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+
+.body-input-field {
+  width: 195px;
+  padding: 13px;
+  border: 1px solid #959595;
+  border-radius: 5px;
+}
+
+.signup-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.cancel-button,
+.signup-button {
+  width: 223px;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.cancel-button {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.signup-button {
+  background-color: #2EB865;
+  color: white;
+}
+
+.signup-button:hover {
+  background-color: #2b9957;
+}
+
+.already-member {
+  color: #959595;
+}
+
+.login-link {
+  color: #2EB865;
+  cursor: pointer;
+}

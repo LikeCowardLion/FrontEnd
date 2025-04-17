@@ -1,0 +1,62 @@
+.daygraph-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #EFF4EA;
+  gap: 35px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.left-section {
+  width: 1076px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 38px;
+  padding-bottom: 69px;
+}
+
+.section-title {
+  text-align: left;
+  font-size: 28px;
+  font-weight: 400;
+  margin-top: 28px;
+  margin-bottom: 20px;
+}
+
+.tabs {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.tab {
+  font-size: 16px;
+  color: #959595;
+  cursor: pointer;
+}
+
+.tab.active {
+  color: #2EB865;
+  font-weight: bold;
+  border-bottom: 2px solid #2EB865;
+  padding-bottom: 5px;
+}
+
+.graph-block {
+  background-color: white;
+  padding: 0px 28px 54px 20px;
+  border-radius: 12px;
+  height: 843px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.graph-title {
+  text-align: left;
+  font-size: 24px;
+  margin-bottom: 109px;
+}
+
+.score-summary {
+  width: 504px;
+}
