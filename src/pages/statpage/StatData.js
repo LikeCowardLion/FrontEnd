@@ -1,5 +1,6 @@
 const statData = {
-    대근육: {
+    upper: {
+      title: "대근육",
       contents: ["파라글라이딩", "컬링", "물건맞추기"],
       graphData: {
         파라글라이딩: [
@@ -32,7 +33,8 @@ const statData = {
       },
     },
   
-    소근육: {
+    lower: {
+      title: "소근육",
       contents: ["풍선터뜨리기", "나사돌리기"],
       graphData: {
         풍선터뜨리기: [
@@ -56,7 +58,8 @@ const statData = {
       },
     },
   
-    유연성: {
+    flexibility: {
+      title: "유연성",
       contents: ["물건집기"],
       graphData: {
         물건집기: [
