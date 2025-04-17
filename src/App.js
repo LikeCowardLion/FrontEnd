@@ -1,34 +1,28 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import './App.css';
-import Login from './pages/login/Login';
-import Signup from './pages/signup/Signup';
 import Sidebar from './pages/sidebar/Sidebar';
 import HomePage from './pages/homepage/Homepage';
-import StatPage from './pages/statpage/StatPage';
-import RankingPage from './pages/rankingpage/RankingPage';
+import TotalPage from './pages/totalpage/TotalPage';
+
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/login" element={<Login />} />
-
-        <Route path="/main" element={
+      <Router>
           <div className="App">
-            <div className="container">
-              <Sidebar />
-              <div className="others">
-                <HomePage />
+              <div className="container">
+                  <Sidebar />
+                  <div className="others">
+                      <Routes>
+                          <Route path="/" element={<Navigate to="/home" />} />
+                          <Route path="/home" element={<HomePage />} />
+                          <Route path="/statistics/:category" element={<TotalPage />} />
+                          <Route path="/ranking" element={<div>랭킹 페이지</div>} />
+                      </Routes>
+                  </div>
               </div>
-            </div>
           </div>
-        } />
-        <Route path="/stats/:section" element={<StatPage />} />
-        <Route path="/ranking" element={<RankingPage />} />
-        <Route path="/signup" element={<Signup />} />
-      </Routes>
-    </Router>
+      </Router>
+
   );
 }
 
