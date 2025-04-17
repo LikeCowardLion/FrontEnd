@@ -20,7 +20,7 @@ const Login = () => {
     }
 
     alert("로그인 성공");
-    navigate("/main");
+    navigate("/home");
   };
 
   const handleSaveIDFlag = () =>{
@@ -29,7 +29,7 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <h2 className="title">MYMEDI</h2>
+      <h2 className="mymedi-title">MYMEDI</h2>
       <form onSubmit={handleLogin}>
         <input
           className="input-field-email"

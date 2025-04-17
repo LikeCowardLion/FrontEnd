@@ -10,8 +10,6 @@ export default function Sidebar() {
     const [selectedDropdown, setSelectedDropdown] = useState(null);
     const navigate = useNavigate();
 
-    const navigate = useNavigate();
-
     const menuItems = [
         { name: "홈", path: "/home", defaultIcon: "home_icon.png", activeIcon: "home_color_icon.png" },
         { name: "통계", path: "/statistics", defaultIcon: "graph_icon.png", activeIcon: "graph_color_icon.png", hasDropdown: true },
@@ -45,7 +43,7 @@ export default function Sidebar() {
                                     } else {
                                         navigate(item.path);
                                         setIsDropdown(false);
-                                        if (item.name === "홈") navigate("/main");
+                                        if (item.name === "홈") navigate("/home");
                                     }
                                 }}
                             >
@@ -73,8 +71,12 @@ export default function Sidebar() {
                                                 if (subItem !== "전체") {
                                                     navigate(`/stats/${subItem}`);
                                                 }
-=======
+
                                                 navigate(`/statistics/${subItem.path}`);
+
+
+                                                navigate(`/statistics/${subItem.path}`);
+
 
                                             }}
                                         >

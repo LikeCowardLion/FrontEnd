@@ -2,15 +2,16 @@
   display: flex;
   justify-content: space-between;
   background-color: #EFF4EA;
-  gap: 35px;
+  gap: 30px;
   width: 100%;
+  padding: 0px 45px 69px 60px;
   box-sizing: border-box;
 }
 
 .left-section {
-  width: 1076px;
   display: flex;
   flex-direction: column;
+  flex: 2;
   padding-top: 38px;
   padding-bottom: 69px;
 }
