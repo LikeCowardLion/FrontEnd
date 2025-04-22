@@ -9,7 +9,7 @@ export default function GradeCard(){
 
             <div className="gradeContent">
                 <div className="gradeText">RED</div>
-                <img className="gradeImage" src={`${publicUrl}/images/image/red_apple.png`} alt="등급 아이콘" />
+                <img className="gradeImage" src={`${publicUrl}/images/image/apple.png`} alt="등급 아이콘" />
             </div>
 
             <div className="gradeNotice">
