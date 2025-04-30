@@ -7,7 +7,8 @@ import useCalendarActive from "../hooks/useCalendarActive";
 
 const categoryMap = {
     FLEXIBILITY: "유연성",
-    // 추가 예정
+    GROSS_MOTOR : "대근육",
+    FINE_MOTOR : "소근육",
 };
 
 export default function HomeCalendar() {
