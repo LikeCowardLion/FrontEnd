@@ -1,5 +1,5 @@
 import './homepage.css';
-import HomeCalendar from './Calendar/HomeCalendar';
+import HomeCalendar from './Calendar/components/HomeCalendar';
 import GradeCard from './MyGrade/GradeCard';
 import ProfileCard from './MyProfile/ProfileCard';
 
