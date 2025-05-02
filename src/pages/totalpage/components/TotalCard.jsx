@@ -1,12 +1,20 @@
-import './totalcard.css';
+import '../styles/totalcard.css';
 import {ArrowRight} from 'lucide-react';
+import useAllStatisticResult from "../hooks/useAllStatisticResult";
 
-export default function TotalCard() {
+export default function TotalCard({ userId , gameId, gameName }) {
+    const { statisticList, loading } = useAllStatisticResult(userId); //loading 빼도 되면 빼버리기
+
+    //게임 id 확인
+    const stat = statisticList.find(item => item.gameId === gameId);
+
+    const userScore = stat?.userAvgScore ?? 0;
+    const peerScore = stat?.ageGroupAvgScore ?? 0;
 
     return (
         <div className="total-card">
             <div className="card-header">
-                <span className="title">행글라이더</span>
+                <span className="title">{gameName}</span>
                 <ArrowRight className="arrow-icon"  />
             </div>
             <div className="card-content">
@@ -21,8 +29,8 @@ export default function TotalCard() {
                     </div>
                     <div className="grid-box">
 
-                        <div className="bar bar-main" style={{ width: '75%', top: 'calc(50% - 40px)' }}></div>
-                        <div className="bar bar-sub" style={{ width: '22%', top: 'calc(50% + 10px)' }}></div>
+                        <div className="bar bar-main" style={{ width: `${userScore}%`, top: 'calc(50% - 40px)' }}></div>
+                        <div className="bar bar-sub" style={{ width: `${peerScore}%`, top: 'calc(50% + 10px)' }}></div>
 
                         <div className="line-horizontal" style={{ top: '5%' }}></div>
                         <div className="line-horizontal" style={{ top: '35%' }}></div>
@@ -38,8 +46,8 @@ export default function TotalCard() {
                 </div>
 
                 <div className="score-display">
-                    <span className="main-score">75</span>
-                    <span className="sub-score">/22</span>
+                    <span className="main-score">{userScore}</span>
+                    <span className="sub-score">/{peerScore}</span>
                 </div>
             </div>
         </div>

@@ -9,7 +9,7 @@ export default function useCalendarActive(date, userId) {
         const result = {};
 
         if (!Array.isArray(dayResultList)) {
-            console.warn("dayResultList가 배열이 아님", dayResultList);
+            console.warn("dayResultList 형식 오류(배열X)", dayResultList);
             return result;
         }
 
@@ -31,13 +31,13 @@ export default function useCalendarActive(date, userId) {
     const fetchMonthResult = useCallback(async (year, month) => {
         try {
             setLoading(true);
-            const data = await getMonthResult(userId, year, month);
+            const response = await getMonthResult(userId, year, month);
 
-            if (data && data.success && Array.isArray(data.dayResultList)) {
-                const formatted = formatActive(year, month, data.dayResultList);
+            if (response && response.success && Array.isArray(response.dayResultList)) {
+                const formatted = formatActive(year, month, response.dayResultList);
                 setActiveDate(formatted);
             } else {
-                console.warn("데이터가 없거나 요청 실패", data);
+                console.warn("데이터가 없거나 요청 실패", response);
                 setActiveDate({});
             }
         } catch (error) {
