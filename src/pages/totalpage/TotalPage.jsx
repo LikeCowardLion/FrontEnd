@@ -7,13 +7,13 @@ export default function TotalPage(){
 
     const gameInfoMap = {
         "8c1f02b9-4d90-4aa8-981d-2f02f7a9e2f3": "행글라이더",
-        "68bd94d0-d999-4fe9-86f0-34a09fbd3879": "슈팅박스",
-        "a699ac38-9f5e-4e0e-9022-76e9ec0d961e" :  "자동차 핸들링",
-        "gameId4": "게임 1",
-        "gameId5": "게임 2",
-        "gameId6": "게임 3",
-        "gameId7": "게임 4",
-        "gameId8": "게임 5"
+        "a699ac38-9f5e-4e0e-9022-76e9ec0d961e": "슈팅박스",
+        "d1229423-a29f-45c2-86c0-b1475630316e" :  "자동차 핸들링",
+        "9348059e-38ea-4500-b0dd-f2163f8903c5": "암벽 점프",
+        "9be7ef45-0021-4880-ac5e-dcf8fca5b3d3": "과일 부수기",
+        "f43cb81c-5124-4270-a9da-cc8e086676df": "풋 컬링",
+        "fa918d6a-cf6f-4d84-86b6-7761060e658d": "물고기 낚시",
+        "68bd94d0-d999-4fe9-86f0-34a09fbd3879": "보물 다이빙"
     };
 
     return (
