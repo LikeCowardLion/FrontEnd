@@ -99,6 +99,7 @@
 
 .react-calendar__tile--now {
     background: none;
+    color: black;
     font-weight: bold;
 }
 

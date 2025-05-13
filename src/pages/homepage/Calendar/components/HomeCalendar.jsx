@@ -13,9 +13,10 @@ const categoryMap = {
 
 export default function HomeCalendar() {
     const [value, setValue] = useState(new Date());
-    const userId = "a6c92e61-2d4e-4d5f-8b11-77e6c4a9be89";
+    const [activeStartDate, setActiveStartDate] = useState(new Date());
 
-    const { activeDate, loading } = useCalendarActive(value, userId);
+    const userId = "a6c92e61-2d4e-4d5f-8b11-77e6c4a9be89";
+    const { activeDate, loading } = useCalendarActive(activeStartDate, userId);
 
     const formatDateKey = (date) => date.toISOString().slice(0, 10);
     const selectedDateKey = formatDateKey(value);
@@ -28,6 +29,7 @@ export default function HomeCalendar() {
                 onChange={setValue}
                 value={value}
                 calendarType="gregory"
+                onActiveStartDateChange={({ activeStartDate }) => setActiveStartDate(activeStartDate)} //월 변경 시 로직
                 formatDay={(locale, date) => date.getDate().toString().padStart(2, '0')}
                 locale="ko-KR"
                 navigationLabel={({ date }) => {
