@@ -14,7 +14,8 @@ export default function useCalendarActive(date, userId) {
         if (!Array.isArray(dayResultList)) return result;
 
         dayResultList.forEach(day => {
-            const dayStr = `${year}-${month.toString().padStart(2, '0')}-${day.date.toString().padStart(2, '0')}`;
+            const dateObj = new Date(year, month - 1, day.date); // 로컬 날짜 객체 생성
+            const dayStr = dateObj.toISOString().slice(0, 10);
             result[dayStr] = {
                 count: day.dayResultCount,
                 activities: (day.detailResultList || []).map(detail => ({
