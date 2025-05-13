@@ -26,7 +26,7 @@ export default function useAllStatisticResult(userId){
         if(userId){
             fetchAllStatistic();
         }
-    }, [statisticList, loading]);
+    }, [userId]);
 
     return { statisticList, loading };
 }

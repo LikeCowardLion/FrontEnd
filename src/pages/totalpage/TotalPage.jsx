@@ -34,7 +34,7 @@ export default function TotalPage(){
             <div className="total-page-grid">
                 {Object.entries(gameInfoMap).map(([gameId, gameName]) => (
                     <TotalCard
-                        key={gameId}
+                        key={`${userId}-${gameId}`}
                         userId={userId}
                         gameId={gameId}
                         gameName={gameName}
