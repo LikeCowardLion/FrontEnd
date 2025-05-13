@@ -42,6 +42,19 @@ export default function HomeCalendar() {
                 }}
                 prevLabel={<IoChevronBack className="navArrow" />}
                 nextLabel={<IoChevronForward className="navArrow" />}
+                tileClassName={({date, view, activeStartDate}) => {
+                    const key = formatDateKey(date);
+                    const count = activeDate[key]?.activities?.length || 0;
+                    //이번 달이 아닌 날짜는 css 건너뛰기
+                    const isMonth = date.getFullYear() === activeStartDate.getFullYear()
+                        && date.getMonth() === activeStartDate.getMonth();
+                    if(!isMonth) return null;
+
+                    if(count >= 5) return 'activity-high';
+                    if(count >= 3) return 'activity-medium';
+                    if(count >= 1) return 'activity-low';
+                    return null;
+                }}
             />
 
             <div className="calendarDetail">

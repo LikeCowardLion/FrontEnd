@@ -102,10 +102,25 @@
     font-weight: bold;
 }
 
-.react-calendar__tile--active {
-    background-color: #43A047 !important;
+/*연한색*/
+.activity-low {
+    background-color: #BAECBF !important;
     color: white !important;
-    border-radius: 50% !important;
+    border-radius: 20% !important;
+}
+
+/*3~4 중간색*/
+.activity-medium {
+    background-color: #6DBF74 !important;
+    color: white !important;
+    border-radius: 20% !important;
+}
+
+/*5~ 진한색*/
+.activity-high {
+    background-color: #2E6130 !important;
+    color: white !important;
+    border-radius: 20% !important;
 }
 
 .react-calendar__month-view__days__day--neighboringMonth {
