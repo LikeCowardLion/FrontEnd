@@ -1,4 +1,4 @@
-body{
+body {
   background-color: #EFF4EA;
   display: flex;
   justify-content: center;
@@ -8,71 +8,70 @@ body{
 }
 
 .login-container {
-    width: 510px;
-    margin: 10px auto;
-    text-align: center;
-    font-size: 15px;
-    padding: 50px 20px;
-    padding-bottom: 128px;
-    border-radius: 12px;
-    background-color: #fff;
+  width: 26.56%; 
+  margin: auto;
+  text-align: center;
+  font-size: 0.78vw;
+  padding: 4.63vh 1.04vw; 
+  padding-bottom: 11.85vh; 
+  border-radius: 30px; 
+  background-color: #fff;
+}
 
-  }
-  
-  .mymedi-title {
-    font-size:48px;
-    font-weight: bold;
-    margin-bottom: 35px;
-    color: #2EB865;
-  }
-  
-  .input-field-email {
-    width: 62%;
-    padding: 13px;
-    padding-left: 20px;
-    border: 1px solid #959595;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-  }
+.mymedi-title {
+  font-size: 2.5vw; 
+  font-weight: bold;
+  margin-bottom: 3.24vh; 
+  color: #2EB865;
+}
 
-  .input-field-passwd {
-    width: 62%;
-    padding: 13px;
-    padding-left: 20px;
-    border: 1px solid #959595;
-    border-top: none;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-  }
-  
-  .save-login{
-    color: #959595;
-    text-align:left;
-    margin-top: 17px;
-    margin-bottom: 18px;
-    margin-left: 81px;
-  }
+.input-field-email {
+  width: 62%;
+  padding: 1.2vh;
+  padding-left: 1.04vw;
+  border: 0.05vw solid #959595;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
 
-  .login-btn {
-    width: 352px;
-    padding: 10px;
-    background-color: #2EB865;
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 17px;
-  }
-  .login-btn:hover {
-    background-color: #2b9957;
-  }
+.input-field-passwd {
+  width: 62%;
+  padding: 1.2vh;
+  padding-left: 1.04vw;
+  border: 0.05vw solid #959595;
+  border-top: none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
 
-  .ask-signup{
-    color: #959595;
-  }
-  .signup-link{
-    color: #2EB865;
-    font-weight: bold;
-  }
-  
+.save-login {
+  color: #959595;
+  text-align: left;
+  margin-top: 1.57vh;     /* 17px */
+  margin-bottom: 1.67vh;  /* 18px */
+  margin-left: 4.22vw;    /* 81px */
+}
+
+.login-btn {
+  width: 18.33vw; /* 352px */
+  padding: 0.93vh; /* 10px */
+  background-color: #2EB865;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 1.57vh; /* 17px */
+}
+.login-btn:hover {
+  background-color: #2b9957;
+}
+
+.ask-signup {
+  color: #959595;
+}
+
+.signup-link {
+  color: #2EB865;
+  font-weight: bold;
+}

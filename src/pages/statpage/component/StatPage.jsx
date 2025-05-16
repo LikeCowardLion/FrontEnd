@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import DayGraph from "./DayGraph/daygraph";
-import statData from "./StatData";
+import DayGraph from "../component/daygraph";
+import statData from "../StatData";
 
 
 const StatPage = () => {
@@ -18,7 +18,6 @@ const StatPage = () => {
         <DayGraph
           sectionTitle={sectionData.title}
           contents={sectionData.contents}
-          graphData={sectionData.graphData}
         />
       </div>
     </div>

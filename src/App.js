@@ -3,8 +3,7 @@ import './App.css';
 import Login from './pages/login/Login';
 import Signup from './pages/signup/Signup';
 import HomePage from './pages/homepage/Homepage';
-import Sidebar from './pages/sidebar/Sidebar';
-import RankingPage from "./pages/rankingpage/RankingPage";
+import RankingPage from "./pages/rankingpage/component/RankingPage";
 import StatRouter from "./pages/StatRouter";
 import Layout from "./pages/Layout";
 
