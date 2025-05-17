@@ -1,8 +1,9 @@
 import '../styles/gradecard.css'
 import useResultCount from "../hooks/useResultCount";
+import useAuth from "../../../login/hooks/useAuth";
 
 export default function GradeCard(){
-    const userId = "a6c92e61-2d4e-4d5f-8b11-77e6c4a9be89";
+    const {userId} = useAuth();
     const {count, loading } = useResultCount(userId);
 
     //나중에 등급별 기준표에 따라서 수정되어야함.

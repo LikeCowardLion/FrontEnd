@@ -4,6 +4,7 @@ import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 import 'react-calendar/dist/Calendar.css';
 import '../styles/homeCalendar.css';
 import useCalendarActive from "../hooks/useCalendarActive";
+import useAuth from "../../../login/hooks/useAuth";
 
 const categoryMap = {
     FLEXIBILITY: "유연성",
@@ -15,7 +16,12 @@ export default function HomeCalendar() {
     const [value, setValue] = useState(new Date());
     const [activeStartDate, setActiveStartDate] = useState(new Date());
 
-    const userId = "a6c92e61-2d4e-4d5f-8b11-77e6c4a9be89";
+    const {userId} = useAuth();
+
+    if (!userId) {
+        console.log("LoacalStorage의 userInfo가 없음.");
+    }
+
     const { activeDate, loading } = useCalendarActive(activeStartDate, userId);
 
     const formatDateKey = (date) => date.toISOString().slice(0, 10);

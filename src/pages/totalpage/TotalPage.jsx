@@ -1,9 +1,10 @@
 import './styles/totalpage.css';
 import TotalCard from './components/TotalCard';
+import useAuth from "../login/hooks/useAuth";
 
 export default function TotalPage(){
 
-    const userId = "a6c92e61-2d4e-4d5f-8b11-77e6c4a9be89";
+    const {userId} = useAuth();
 
     const gameInfoMap = {
         "8c1f02b9-4d90-4aa8-981d-2f02f7a9e2f3": "행글라이더",
