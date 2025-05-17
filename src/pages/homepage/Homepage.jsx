@@ -1,7 +1,7 @@
 import './homepage.css';
 import HomeCalendar from './Calendar/components/HomeCalendar';
 import GradeCard from './MyGrade/components/GradeCard';
-import ProfileCard from './MyProfile/ProfileCard';
+import ProfileCard from './MyProfile/components/ProfileCard';
 
 export default function Homepage(){
 
