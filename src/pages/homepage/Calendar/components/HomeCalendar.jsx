@@ -4,17 +4,25 @@ import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 import 'react-calendar/dist/Calendar.css';
 import '../styles/homeCalendar.css';
 import useCalendarActive from "../hooks/useCalendarActive";
+import useAuth from "../../../login/hooks/useAuth";
 
 const categoryMap = {
     FLEXIBILITY: "유연성",
-    // 추가 예정
+    GROSS_MOTOR : "대근육",
+    FINE_MOTOR : "소근육",
 };
 
 export default function HomeCalendar() {
     const [value, setValue] = useState(new Date());
-    const userId = "a6c92e61-2d4e-4d5f-8b11-77e6c4a9be89";
+    const [activeStartDate, setActiveStartDate] = useState(new Date());
 
-    const { activeDate, loading } = useCalendarActive(value, userId);
+    const {userId} = useAuth();
+
+    if (!userId) {
+        console.log("LoacalStorage의 userInfo가 없음.");
+    }
+
+    const { activeDate, loading } = useCalendarActive(activeStartDate, userId);
 
     const formatDateKey = (date) => date.toISOString().slice(0, 10);
     const selectedDateKey = formatDateKey(value);
@@ -27,6 +35,7 @@ export default function HomeCalendar() {
                 onChange={setValue}
                 value={value}
                 calendarType="gregory"
+                onActiveStartDateChange={({ activeStartDate }) => setActiveStartDate(activeStartDate)} //월 변경 시 로직
                 formatDay={(locale, date) => date.getDate().toString().padStart(2, '0')}
                 locale="ko-KR"
                 navigationLabel={({ date }) => {
@@ -41,6 +50,19 @@ export default function HomeCalendar() {
                 }}
                 prevLabel={<IoChevronBack className="navArrow" />}
                 nextLabel={<IoChevronForward className="navArrow" />}
+                tileClassName={({date, view, activeStartDate}) => {
+                    const key = formatDateKey(date);
+                    const count = activeDate[key]?.activities?.length || 0;
+                    //이번 달이 아닌 날짜는 css 건너뛰기
+                    const isMonth = date.getFullYear() === activeStartDate.getFullYear()
+                        && date.getMonth() === activeStartDate.getMonth();
+                    if(!isMonth) return null;
+
+                    if(count >= 5) return 'activity-high';
+                    if(count >= 3) return 'activity-medium';
+                    if(count >= 1) return 'activity-low';
+                    return null;
+                }}
             />
 
             <div className="calendarDetail">
