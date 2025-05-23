@@ -1,36 +1,26 @@
-import React, {useState} from "react";
-import "../login/Login.css";
-import { useNavigate } from "react-router-dom";
+import "../styles/Login.css";
+import useAuth from "../hooks/useAuth";
+import React, { useState } from "react";
+import {useNavigate} from "react-router-dom";
 
 const Login = () => {
     const navigate = useNavigate();
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [saveIDFlag, setSaveIDFlag] = useState(false);
 
-     // 로그인 버튼 클릭
-    const handleLogin = (e) => {
-    e.preventDefault(); // 새로고침 방지
-    console.log("로그인 시도:", email, password);
+    const { login, loading } = useAuth();
 
-    // 간단한 유효성 검사
-    if (!email || !password) {
-      alert("이메일과 비밀번호를 입력해주세요!");
-      return;
-    }
-
-    alert("로그인 성공");
-    navigate("/home");
-  };
-
-  const handleSaveIDFlag = () =>{
-    setSaveIDFlag((prev) => !prev);
-  };
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        login(email, password);
+    };
 
   return (
     <div className="login-container">
       <h2 className="mymedi-title">MYMEDI</h2>
-      <form onSubmit={handleLogin}>
+      <form onSubmit={handleSubmit}>
         <input
           className="input-field-email"
           type="email"
@@ -50,7 +40,7 @@ const Login = () => {
             className="save-login-info"
             type="checkbox"
             checked={saveIDFlag}
-            onChange={handleSaveIDFlag}
+            onChange={() => setSaveIDFlag((prev) => !prev)}
           />
           
           <label>로그인 정보 저장</label>
