@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import RankingCard from './RankingCard';
-import './ranking.css';
+import '../styles/ranking.css';
 
 const sectionList = ['대근육', '소근육', '유연성'];
 const contentBySection = {
-  대근육: ['과일터뜨리기', '물고기잡기', '자동차핸들링'],
-  소근육: ['컬링', '상자맞추기','암벽점프'],
-  유연성: ['보물찾기','패러글라이딩'],
+  대근육: ['과일 터뜨리기', '물고기 잡기', '자동차 핸들링'],
+  소근육: ['풋 컬링', '슈팅 박스','암벽 점프'],
+  유연성: ['보물 찾기','행글라이딩'],
 };
 
 const RankingPage = () => {

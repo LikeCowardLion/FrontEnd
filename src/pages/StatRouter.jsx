@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import TotalPage from "./totalpage/TotalPage";
-import StatPage from "./statpage/StatPage";
+import StatPage from "./statpage/component/StatPage";
 
 export default function StatRouter() {
     const { category } = useParams();
