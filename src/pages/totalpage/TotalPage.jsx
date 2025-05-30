@@ -7,9 +7,9 @@ export default function TotalPage(){
     const {userId} = useAuth();
 
     const gameInfoMap = {
-        "8c1f02b9-4d90-4aa8-981d-2f02f7a9e2f3": "행글라이더",
-        "a699ac38-9f5e-4e0e-9022-76e9ec0d961e": "슈팅박스",
-        "d1229423-a29f-45c2-86c0-b1475630316e" :  "자동차 핸들링",
+        "8c1f02b9-4d90-4aa8-981d-2f02f7a9e2f3": "행글라이딩",
+        "a699ac38-9f5e-4e0e-9022-76e9ec0d961e": "슈팅 박스",
+        "d1229423-a29f-45c2-86c0-b1475630316e" : "자동차 핸들링",
         "9348059e-38ea-4500-b0dd-f2163f8903c5": "암벽 점프",
         "9be7ef45-0021-4880-ac5e-dcf8fca5b3d3": "과일 부수기",
         "f43cb81c-5124-4270-a9da-cc8e086676df": "풋 컬링",

@@ -2,10 +2,12 @@ import '../styles/totalcard.css';
 import {ArrowRight} from 'lucide-react';
 import useAllStatisticResult from "../hooks/useAllStatisticResult";
 import {useEffect, useState} from "react";
+import useNavigateGraph from "../hooks/useNavigateGraph";
 
 export default function TotalCard({ userId , gameId, gameName }) {
     const { statisticList, loading } = useAllStatisticResult(userId); //loading 빼도 되면 빼버리기
     const [animate, setAnimate] = useState(false);
+    const handleNavigate = useNavigateGraph(gameName);
 
     const stat = statisticList.find(item => item.gameId === gameId); //게임 id 확인
     const userScore = stat?.userAvgScore ?? 0;
@@ -23,7 +25,7 @@ export default function TotalCard({ userId , gameId, gameName }) {
         <div className="total-card">
             <div className="card-header">
                 <span className="title">{gameName}</span>
-                <ArrowRight className="arrow-icon"  />
+                <ArrowRight className="arrow-icon" onClick={handleNavigate} />
             </div>
             <div className="card-content">
                 <div className="chart-grid">
