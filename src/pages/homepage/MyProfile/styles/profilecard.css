@@ -82,3 +82,59 @@
     margin-left: 17px;
     color: #646464;
 }
+
+.profileSaveButtonWrapper {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.profileSaveButton {
+    padding: 10px 24px;
+    font-size: 16px;
+    background-color: #43A047;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Pretendard-SemiBold', sans-serif;
+}
+
+.profileSaveButton:hover {
+    background-color: #2E6130;
+}
+
+.profileMessage {
+    margin-top: 10px;
+    color: #e74c3c;
+    font-size: 14px;
+}
+
+.profileRight input,
+.profileRight select,
+.profileNameInput {
+    width: 180px;
+    padding: 6px 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: 'Pretendard', sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+}
+
+.profileRight input:focus,
+.profileRight select:focus,
+.profileNameInput:focus {
+    outline: none;
+    border-color: #007bff;
+    background-color: #fff;
+}
+
+.profileNameInput {
+    margin-top: 10px;
+    text-align: center;
+}

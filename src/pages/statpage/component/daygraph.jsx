@@ -16,17 +16,23 @@ const gameIdMap = {
   "행글라이딩": "8c1f02b9-4d90-4aa8-981d-2f02f7a9e2f3",
 };
 
-const DayGraph = ({ sectionTitle, contents=[] }) => {
+const DayGraph = ({ sectionTitle, contents=[], initSelectedContent="" }) => {
   const [selectedContent, setSelectedContent] = useState(contents[0] || "");
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
 
-//부위 바뀌면 첫번째 콘텐츠로 초기화
+  //부위 바뀌면 첫번째 콘텐츠로 초기화
   useEffect(() => {
     if (contents.length > 0) {
-      setSelectedContent(contents[0]);
+      // 쿼리로 넘어온 initSelectedContent가 contents에 포함되면 사용
+      if (initSelectedContent && contents.includes(initSelectedContent)) {
+        console.log('selectedContent:', selectedContent);
+        setSelectedContent(initSelectedContent);
+      } else {
+        setSelectedContent(contents[0]);
+      }
     }
-  }, [contents]);
+  }, [contents, initSelectedContent]);
 
   //selectedContent가 바뀌면 API 호출
   useEffect(() => {

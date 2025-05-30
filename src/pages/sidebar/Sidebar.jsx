@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaCaretUp } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import "./sidebar.css";
+import useAuth from "../login/hooks/useAuth";
 
 export default function Sidebar() {
     const publicUrl = process.env.PUBLIC_URL;
@@ -9,6 +10,10 @@ export default function Sidebar() {
     const [isDropdown, setIsDropdown] = useState(false);
     const [selectedDropdown, setSelectedDropdown] = useState(null);
     const navigate = useNavigate();
+
+    const {user} = useAuth(); //user정보 가져오기
+    const localUser = JSON.parse(localStorage.getItem("updateUserInfo"));
+    const disUser = localUser || user;
 
     const menuItems = [
         { name: "홈", path: "/home", defaultIcon: "home_icon.png", activeIcon: "home_color_icon.png" },
@@ -28,8 +33,12 @@ export default function Sidebar() {
             <div className="sidebarWrapper">
                 <h1 className="sidebarTitle">MYMEDI</h1>
 
-                <img src={`${publicUrl}/images/image/profile.png`} alt="Profile" className="SideImage"/>
-                <h3 className="sidebarName">아무개 님</h3>
+                <img
+                    src={disUser?.image?.trim() ? disUser.image : `${publicUrl}/images/image/profile.png`}
+                    className="SideImage"
+                    alt="프로필 사진"
+                />
+                <h3 className="sidebarName">{disUser.nickname} 님</h3>
 
                 <ul className="sidebarList">
                     {menuItems.map((item, index) => (
