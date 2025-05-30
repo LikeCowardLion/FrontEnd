@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
-import apiClient from "../../common/services/apiClient";
+import {getAuth} from "../services/loginAPI";
 
 export default function useAuth(){
     const navigate = useNavigate();
@@ -24,21 +24,19 @@ export default function useAuth(){
 
         try {
             setLoading(true);
-            const response = await apiClient.post("/user/login", {
-                emailId: email,
-                password,
-            });
+            const response = await getAuth(email, password,);
 
-            if (response.data.success) {
+            if (response.success) {
                 alert("로그인 성공");
-                const userInfo = response.data.userInfo;
+                const userInfo = response.userInfo;
                 console.log("로그인 유저 정보:", userInfo);
                 //local stroage에 저장
                 localStorage.setItem("userInfo", JSON.stringify(userInfo));
+                localStorage.removeItem("updateUserInfo"); //이전 수정 정보 초기화
                 setUser(userInfo);
                 navigate("/home"); //경로 이동
-            } else {
-                alert(response.data.message || "로그인 실패");
+            } else if(!response.success) {
+                alert("로그인 실패");
             }
         } catch (err) {
             console.error("로그인 오류", err);
@@ -61,5 +59,6 @@ export default function useAuth(){
         logout,
         loading,
         isAuthenticated: !!user,
+        setUser,
     };
 }
