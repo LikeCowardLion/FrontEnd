@@ -11,16 +11,19 @@ export default function Sidebar() {
     const [selectedDropdown, setSelectedDropdown] = useState(null);
     const navigate = useNavigate();
 
-    const {user} = useAuth(); //user정보 가져오기
+    const { user, logout } = useAuth();
     const localUser = JSON.parse(localStorage.getItem("updateUserInfo"));
     const disUser = localUser || user;
+
+    if (!disUser) {
+        return null; // 또는 대체 UI
+    }
 
     const menuItems = [
         { name: "홈", path: "/home", defaultIcon: "home_icon.png", activeIcon: "home_color_icon.png" },
         { name: "통계", path: "/statistics", defaultIcon: "graph_icon.png", activeIcon: "graph_color_icon.png", hasDropdown: true },
         { name: "랭킹", path: "/ranking", defaultIcon: "ranking_icon.png", activeIcon: "ranking_color_icon.png" },
     ];
-
     const dropdownItems = [
         { label: "전체", path: "total" },
         { label: "대근육", path: "upper" },
@@ -98,7 +101,7 @@ export default function Sidebar() {
                         </React.Fragment>
                     ))}
                 </ul>
-                <button className="logoutButton">
+                <button className="logoutButton" onClick={logout}>
                     <img
                         src={`${publicUrl}/images/icons/logout_icon.png`}
                         alt="로그아웃"

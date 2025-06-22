@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import {useNavigate} from "react-router-dom";
 import {getAuth} from "../services/loginAPI";
 
@@ -13,6 +13,7 @@ export default function useAuth(){
     };
 
     const [user, setUser] = useState(getUser());
+    const [loggedOut, setLoggedOut] = useState(false);
 
     const login = async (email, password) =>{
 
@@ -49,8 +50,14 @@ export default function useAuth(){
     const logout = () =>{
         localStorage.removeItem("userInfo");
         setUser(null);
-        navigate("/login"); //로그인으로 이동
+        setLoggedOut(true);
     }
+
+    useEffect(() => {
+        if (loggedOut && user === null) {
+            navigate("/login");
+        }
+    }, [loggedOut, user, navigate]);
 
     return {
         user,
