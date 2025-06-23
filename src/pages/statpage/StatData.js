@@ -1,7 +1,7 @@
 const statData = {
     upper: {
       title: "대근육",
-      contents: ["암벽 점프", "슈팅 박스", "풋 컬링"],
+      contents: ["암벽 점프", "슈팅 박스", "사커킥"],
       },
   
     lower: {

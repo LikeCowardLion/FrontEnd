@@ -9,7 +9,7 @@ import useAuth from "../../login/hooks/useAuth";
 const gameIdMap = {
   "암벽 점프": "9348059e-38ea-4500-b0dd-f2163f8903c5",
   "과일 부수기": "9be7ef45-0021-4880-ac5e-dcf8fca5b3d3",
-  "풋 컬링": "f43cb81c-5124-4270-a9da-cc8e086676df",
+  "사커킥": "f43cb81c-5124-4270-a9da-cc8e086676df",
   "자동차 핸들링": "d1229423-a29f-45c2-86c0-b1475630316e",
   "물고기 낚시": "fa918d6a-cf6f-4d84-86b6-7761060e658d",
   "슈팅 박스": "a699ac38-9f5e-4e0e-9022-76e9ec0d961e",
