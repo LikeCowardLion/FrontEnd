@@ -32,6 +32,8 @@
   flex-grow: 1;
   background-color: #EFF4EA;
   overflow-y: auto;
+  overflow: hidden;
+  margin: 0;
   display: flex;
   flex-direction: column;
 }
@@ -48,4 +50,3 @@ html, body {
   justify-content: center;
   align-items: center;
 }
-

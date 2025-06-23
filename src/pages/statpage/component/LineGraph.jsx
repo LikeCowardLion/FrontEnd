@@ -5,6 +5,9 @@ import {
 } from "recharts";
 
 const LineGraph = ({ data }) => {
+const maxValue = Math.max(...data.map(d => d.value), 0);
+const yMax = Math.ceil((maxValue + 1) / 100) * 100;
+
   return (
     <ResponsiveContainer width="100%" height={663}>
     <AreaChart data={data} margin={{ left:0, bottom: 54 }}>
@@ -15,7 +18,7 @@ const LineGraph = ({ data }) => {
         </linearGradient>
       </defs>
       <XAxis dataKey="date" />
-      <YAxis domain={[0, 100]} />
+      <YAxis domain={[0, yMax]} />
       <CartesianGrid strokeDasharray="3 3" />
       <Tooltip formatter={(value) => [`${value}점이에요 😌`, "점수"]} />
       <Area type="monotone" dataKey="value" stroke="#2EB865" fill="url(#colorScore)" />
