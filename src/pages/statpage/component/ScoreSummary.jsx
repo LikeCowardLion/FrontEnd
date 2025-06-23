@@ -15,6 +15,7 @@ useEffect(()=> {
 
     try {
       const res = await getStatisticResult(userId, gameId);
+      console.log("ScoreSummary 응답 확인:", res);
       if(res.success && res.statisticInfo){
         setStat({
           best:res.statisticInfo.userBestScore,
