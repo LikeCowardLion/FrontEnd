@@ -8,7 +8,7 @@ export default function GradeCard(){
 
     //나중에 등급별 기준표에 따라서 수정되어야함.
     // 따로 로직으로 구분 시켜주기
-    const maxCount = 30;
+    const maxCount = 100;
     const remain = Math.max(0, maxCount - count);
     const percent = Math.min(100, (count/maxCount) * 100);
 
