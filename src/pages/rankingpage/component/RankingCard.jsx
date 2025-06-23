@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import '../styles/ranking.css';
 import { getRankResult } from '../service/RankResultAPI';
+import useAuth from "../../login/hooks/useAuth";
 
 const gameIdMap = {
   "암벽 점프": "9348059e-38ea-4500-b0dd-f2163f8903c5",
@@ -16,7 +17,7 @@ const gameIdMap = {
 const RankingCard = ({ section, contentName }) => {
   const [rankList, setRankList] = useState([]);
   const [myRank, setMyRank] = useState(null);
-  const userId = 'a6c92e61-2d4e-4d5f-8b11-77e6c4a9be89';
+  const {userId} = useAuth();
 
   useEffect(()=> {
     const fetchRanking = async() => {
