@@ -1,7 +1,13 @@
+
+
 .statpage-container {
   display: flex;
   padding:  0px 45px 69px 60px;
-  gap: 40px;;
+  gap: 40px;
+  transform: scale(0.80);
+  transform-origin: top left;
+  width: 1920px;
+  height: 1080px;
 }
 
 .section-header {

@@ -3,6 +3,10 @@
     min-height: 100vh;
     flex-shrink: 0;
     box-sizing: border-box;
+    transform: scale(0.96);
+    transform-origin: top left;
+    width: 1920px;
+    height: 1080px;
   }
   
   .section-tabs {
@@ -38,7 +42,7 @@
   }
   .ranking-container{
     width: 510px;
-    height: 850px;
+    height: 83vh;
     border-radius: 0px 12px 12px 12px;
   }
   .ranking-card {
