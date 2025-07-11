@@ -31,7 +31,7 @@ const Login = () => {
         <input
           className="input-field-passwd"
           type="password"
-          placeholder="Passwword"
+          placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
