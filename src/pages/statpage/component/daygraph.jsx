@@ -7,14 +7,14 @@ import useAuth from "../../login/hooks/useAuth";
 
 
 const gameIdMap = {
-  "암벽 점프": "9348059e-38ea-4500-b0dd-f2163f8903c5",
-  "과일 부수기": "9be7ef45-0021-4880-ac5e-dcf8fca5b3d3",
-  "사커킥": "f43cb81c-5124-4270-a9da-cc8e086676df",
-  "자동차 핸들링": "d1229423-a29f-45c2-86c0-b1475630316e",
-  "물고기 낚시": "fa918d6a-cf6f-4d84-86b6-7761060e658d",
-  "슈팅 박스": "a699ac38-9f5e-4e0e-9022-76e9ec0d961e",
-  "보물 다이빙": "68bd94d0-d999-4fe9-86f0-34a09fbd3879",
-  "행글라이딩": "8c1f02b9-4d90-4aa8-981d-2f02f7a9e2f3",
+  "암벽 점프": "8cd313e4-508e-4bb1-83b1-58d3561ca39b",
+  "과일 부수기": "e7eb3f67-e527-41a1-9171-f7f4cb7a970d",
+  "사커킥": "c3dd5fdc-f110-442b-9bb5-be03963124dd",
+  "자동차 핸들링": "7adf10a4-9eee-417b-b299-25c72b2509ba",
+  "물고기 낚시": "1fc1fcca-2750-4f98-96ee-c0f9805a5ba4",
+  "슈팅 박스": "5d1b7663-cbee-4433-b827-6859b744400e",
+  "보물 다이빙": "a483a18c-406f-4e9c-aa58-451c08ec003b",
+  "행글라이딩": "509fa6ba-00d5-4580-a750-2de60301f701",
 };
 
 const DayGraph = ({ sectionTitle, contents=[], initSelectedContent="" }) => {
@@ -59,6 +59,9 @@ const DayGraph = ({ sectionTitle, contents=[], initSelectedContent="" }) => {
             date: item.date,
             value: item.bestScore,
           }));
+          // 날짜 정렬
+          formatted.sort((a, b) => new Date(a.date) - new Date(b.date));
+
           console.log("그래프용 데이터:", formatted);
           setData(formatted);
         } else {
