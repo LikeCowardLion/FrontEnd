@@ -1,7 +1,7 @@
 import '../styles/totalcard.css';
 import {ArrowRight} from 'lucide-react';
 import useAllStatisticResult from "../hooks/useAllStatisticResult";
-import {useEffect, useState} from "react";
+import {useEffect, useMemo, useState} from "react";
 import useNavigateGraph from "../hooks/useNavigateGraph";
 
 const maxScoreMap = {
@@ -15,70 +15,96 @@ const maxScoreMap = {
     "a483a18c-406f-4e9c-aa58-451c08ec003b": 600, // 보물 다이빙
 };
 
-export default function TotalCard({ userId , gameId, gameName }) {
-    const { statisticList, loading } = useAllStatisticResult(userId); //loading 빼도 되면 빼버리기
-    const [animate, setAnimate] = useState(false);
-    const handleNavigate = useNavigateGraph(gameName);
 
-    const stat = statisticList.find(item => item.gameId === gameId); //게임 id 확인
-    const userScore = stat?.userAvgScore ?? 0;
-    const peerScore = stat?.ageGroupAvgScore ?? 0;
+export default function TotalCard({ userId, gameId, gameName }) {
+  const { statisticList } = useAllStatisticResult(userId);
+  const [animate, setAnimate] = useState(false);
+  const handleNavigate = useNavigateGraph(gameName);
 
-    const maxScore = maxScoreMap[gameId] ?? 100; // 기본값 100
-    const graphUserScore = Math.min(100, (userScore / maxScore) * 100);
-    const graphPeerScore = Math.min(100, (peerScore / maxScore) * 100);
+  const stat = statisticList.find(item => item.gameId === gameId);
+  const userScore = stat?.userAvgScore ?? 0;
+  const peerScore = stat?.ageGroupAvgScore ?? 0;
 
-    //페이지 이동 시 애니메이션 재 실행
-    useEffect(() => {
-        if (stat) {
-            setAnimate(false);
-            requestAnimationFrame(() => setAnimate(true));
-        }
-    }, [stat?.userAvgScore, stat?.ageGroupAvgScore]);
+  // 1) 스케일 최대값: 게임별 고정 점수 있으면 그걸 사용, 없으면 데이터 기반 '그대로'
+  const scaleMax = useMemo(() => {
+    const fixedMax = maxScoreMap[gameId];
+    if (fixedMax) return fixedMax;
+    return Math.max(userScore, peerScore, 1);
+  }, [gameId, userScore, peerScore]);
 
-    return (
-        <div className="total-card">
-            <div className="card-header">
-                <span className="title">{gameName}</span>
-                <ArrowRight className="arrow-icon" onClick={handleNavigate} />
-            </div>
-            <div className="card-content">
-                <div className="chart-grid">
+  // 2) 눈금값(절대값): 0, 25%, 50%, 75%, 100%
+  const ticks = useMemo(
+    () => [0, 0.25, 0.5, 0.75, 1].map(r => Math.round(scaleMax * r)),
+    [scaleMax]
+  );
 
-                    <div className="grid-x">
-                        <span>0</span>
-                        <span>25</span>
-                        <span>50</span>
-                        <span>75</span>
-                        <span>100</span>
-                    </div>
-                    <div className="grid-box">
-                        <div
-                            className={`bar bar-main ${animate ? 'bar-animate' : ''}`}
-                            style={{ width: `${graphUserScore}%`, top: 'calc(50% - 40px)' }}
-                        />
-                        <div
-                            className={`bar bar-sub ${animate ? 'bar-animate' : ''}`}
-                            style={{ width: `${graphPeerScore}%`, top: 'calc(50% + 10px)' }}
-                        />
-                        <div className="line-horizontal" style={{ top: '5%' }}></div>
-                        <div className="line-horizontal" style={{ top: '35%' }}></div>
-                        <div className="line-horizontal" style={{ top: '65%' }}></div>
-                        <div className="line-horizontal" style={{ top: '95%' }}></div>
+  // 3) 막대 너비: 동일 기준(scaleMax)으로 %
+  const graphUserPct = Math.min(100, (userScore / scaleMax) * 100);
+  const graphPeerPct = Math.min(100, (peerScore / scaleMax) * 100);
 
-                        <div className="line-vertical" style={{ left: '25%' }}></div>
-                        <div className="line-vertical" style={{ left: '50%' }}></div>
-                        <div className="line-vertical" style={{ left: '75%' }}></div>
-                        <div className="line-vertical" style={{ left: '100%' }}></div>
-                    </div>
+  useEffect(() => {
+    if (stat) {
+      setAnimate(false);
+      requestAnimationFrame(() => setAnimate(true));
+    }
+  }, [stat?.userAvgScore, stat?.ageGroupAvgScore, scaleMax]);
 
-                </div>
+  return (
+    <div className="total-card">
+      <div className="card-header">
+        <span className="title">{gameName}</span>
+        <ArrowRight className="arrow-icon" onClick={handleNavigate} />
+      </div>
 
-                <div className="score-display">
-                    <span className="main-score">{userScore}</span>
-                    <span className="sub-score">/{peerScore}</span>
-                </div>
-            </div>
+      <div className="card-content">
+        {/* 그래프 영역(단일 좌표계) */}
+        <div className="chart-grid">
+          {/* 1) 그리드(선만) */}
+          <div className="grid-box">
+            
+            <div className="line-vertical" style={{ left: '25%' }} />
+            <div className="line-vertical" style={{ left: '50%' }} />
+            <div className="line-vertical" style={{ left: '75%' }} />
+            <div className="line-vertical" style={{ left: '100%' }} />
+
+            <div className="line-horizontal" style={{ top: '5%' }}></div>
+            <div className="line-horizontal" style={{ top: '35%' }}></div>
+            <div className="line-horizontal" style={{ top: '65%' }}></div>
+            <div className="line-horizontal" style={{ top: '95%' }}></div>
+          </div>
+
+          {/* 2) x축 눈금(숫자) */}
+          <div className="x-ticks">
+            {ticks.map((t, i) => (
+              <span
+                key={i}
+                className={`tick tick-${i}`}
+                style={{ left: `${i * 25}%` }}
+              >
+                {t}
+              </span>
+            ))}
+          </div>
+
+          {/* 3) 막대 */}
+          <div className="bars">
+            <div
+              className={`bar bar-main ${animate ? 'bar-animate' : ''}`}
+              style={{ width: `${graphUserPct}%`, top: 'calc(50% - 40px)' }}
+            />
+            <div
+              className={`bar bar-sub ${animate ? 'bar-animate' : ''}`}
+              style={{ width: `${graphPeerPct}%`, top: 'calc(50% + 10px)' }}
+            />
+          </div>
         </div>
-    );
+
+        {/* 점수 표기 */}
+        <div className="score-display">
+          <span className="main-score">{userScore}</span>
+          <span className="sub-score">/{peerScore}</span>
+        </div>
+      </div>
+    </div>
+  );
 }
