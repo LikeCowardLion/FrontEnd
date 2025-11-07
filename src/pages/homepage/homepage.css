@@ -1,0 +1,23 @@
+.homepage-container {
+    display: flex;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+
+/* 캘린더 영역 */
+.calendar-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 69px 0 69px 45px;
+}
+
+/* 오른쪽 카드 묶음 */
+.info-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 53px;
+    margin: 69px 0 69px 45px;
+}

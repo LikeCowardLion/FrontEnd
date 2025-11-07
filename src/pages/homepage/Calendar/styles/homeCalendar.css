@@ -1,0 +1,206 @@
+.calendarWrapper {
+    width: 870px;
+    height: 942px;
+    background-color: white;
+    font-family: 'Pretendard', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 46px 73px 27px 73px;
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+
+.react-calendar {
+    border: none;
+    font-size: 20px;
+    width: 100%;
+}
+
+.react-calendar__navigation {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+}
+
+.react-calendar__navigation__label {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.react-calendar__navigation__prev2-button,
+.react-calendar__navigation__next2-button {
+    display: none;
+}
+
+.navArrow {
+    font-size: 24px;
+    color: #2E2E2E;
+    cursor: pointer;
+}
+
+.custom-label {
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.custom-label .month {
+    align-items: center;
+    color: #2E2E2E;
+    margin-right: 4px;
+    margin-bottom: 10px;
+}
+
+.custom-label .year {
+    color: #c3d1bd;
+}
+
+
+/* 요일 */
+.react-calendar__month-view__weekdays {
+    text-align: center;
+    font-size: 20px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.react-calendar__month-view__weekdays abbr {
+    text-decoration: none;
+}
+
+.react-calendar__month-view__days {
+    display: grid !important;
+    grid-template-columns: repeat(7, 1fr); /* 7일 */
+    row-gap: 23px;
+    column-gap: 74px;
+    justify-content: center; /* 가운데 정렬 */
+    padding: 0 10px; /* 좌우 여백 약간만 */
+}
+
+
+.react-calendar__tile {
+    text-align: center;
+    padding: 0;
+    border-radius: 100%;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.react-calendar__tile--now {
+    background: none;
+    color: black;
+    font-weight: bold;
+}
+
+/*연한색*/
+.activity-low {
+    background-color: #BAECBF !important;
+    color: white !important;
+    border-radius: 20% !important;
+}
+
+/*3~4 중간색*/
+.activity-medium {
+    background-color: #6DBF74 !important;
+    color: white !important;
+    border-radius: 20% !important;
+}
+
+/*5~ 진한색*/
+.activity-high {
+    background-color: #2E6130 !important;
+    color: white !important;
+    border-radius: 20% !important;
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+    color: #ccc !important;
+}
+
+.react-calendar__month-view__days__day--weekend:nth-child(7n+1) {
+    color: #e74c3c;
+}
+.react-calendar__month-view__days__day--weekend:nth-child(7n) {
+    color: #2980b9;
+}
+
+.calendarDetail {
+    width: 100%;
+    height: 320px;
+    box-sizing: border-box;
+    padding: 24px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+}
+
+.detailDivider {
+    width: 100%;
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 6px 0 12px;
+}
+
+.activityList {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 8px;
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.activityList::-webkit-scrollbar {
+    display: none;
+}
+
+.calendarDetail h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    margin-left: 8px;
+    text-align: left;
+}
+
+.detailTitle {
+    text-align: left;
+    font-size: 20px;
+    margin: 20px 8px;
+}
+
+.activityItem {
+    text-align: left;
+    display: flex;
+    gap: 8px;
+    margin: 12px;
+    font-size: 18px;
+    color: #2e2e2e;
+}
+
+.calendar-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #43A047;
+    border-radius: 50%;
+    margin-top: 6px;
+}
+
+.activityText {
+    flex: 1;
+}
+
+.activityTime {
+    font-size: 12px;
+    color: #888;
+}

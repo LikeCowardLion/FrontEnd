@@ -1,0 +1,176 @@
+body {
+  background-color: #EFF4EA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.text-field {
+  font-size: 15px;
+  font-weight: bold;
+  text-align: left;
+  margin-left: 1.82vw; /* 35px */
+  margin-bottom: 0.37vh; /* 4px */
+  color: #333;
+}
+
+.s-text-field {
+  font-size: 12px;
+  text-align: left;
+  margin-left: 1.82vw;
+  color: #A1A1A1;
+}
+
+.signup-container {
+  width: 26.56vw; /* 510px */
+  background-color: white;
+  margin: auto;
+  padding: 3.7vh 1.04vw; /* 40px 20px */
+  border-radius: 12px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.signup-title {
+  font-size: 48px;
+  font-weight: bold;
+  color: #2EB865;
+  margin-bottom: 3.24vh; /* 35px */
+}
+
+.input-field {
+  width: 22.19vw; /* 426px */
+  padding: 1.2vh;
+  border: 1px solid #959595;
+  border-radius: 5px;
+}
+
+.pswd-input-field {
+  width: 22.19vw;
+  padding: 1.2vh;
+  border: 1px solid #959595;
+  border-radius: 5px;
+}
+
+.email-input-field {
+  width: 16.93vw; /* 325px */
+  padding: 1.2vh;
+  border: 1px solid #959595;
+  border-radius: 5px;
+}
+
+.email-check-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.52vw; /* 10px */
+  margin-bottom: 1.11vh; /* 12px */
+}
+
+.check-button {
+  padding: 0.93vh 0.78vw; /* 10px 15px */
+  width: 4.69vw; /* 90px */
+  height: 4.07vh; /* 44px */
+  background-color: #2EB865;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.check-button:hover {
+  background-color: #2b9957;
+}
+
+.row-group {
+  display: flex;
+  justify-content: center;
+  gap: 1.35vw; /* 26px */
+  margin-bottom: 1.11vh;
+}
+
+.body-row-group {
+  display: flex;
+  justify-content: center;
+  gap: 0.52vw; /* 10px */
+  margin-bottom: 1.11vh;
+}
+
+.age-input-field {
+  width: 9.38vw; /* 180px */
+  padding: 1.2vh;
+  border: 1px solid #959595;
+  border-radius: 5px;
+}
+
+.gender-group {
+  display: flex;
+  width: 11.46vw; /* 220px */
+  height: 4.07vh;
+}
+
+.gender {
+  width: 5.73vw; /* 110px */
+  padding: 1.2vh 2.34vw; /* 13px 45px */
+  border: 1px solid #959595;
+  background-color: white;
+  color: #333;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.gender.selected {
+  background-color: #2EB865;
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+
+.body-input-field {
+  width: 10.16vw; /* 195px */
+  padding: 1.2vh;
+  border: 1px solid #959595;
+  border-radius: 5px;
+}
+
+.signup-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.52vw; /* 10px */
+  margin-top: 1.39vh; /* 15px */
+  margin-bottom: 1.39vh;
+}
+
+.cancel-button,
+.signup-button {
+  width: 11.61vw; /* 223px */
+  padding: 0.93vh; /* 10px */
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.cancel-button {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.signup-button {
+  background-color: #2EB865;
+  color: white;
+}
+
+.signup-button:hover {
+  background-color: #2b9957;
+}
+
+.already-member {
+  color: #959595;
+}
+
+.login-link {
+  color: #2EB865;
+  cursor: pointer;
+}

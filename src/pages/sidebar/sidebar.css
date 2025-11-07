@@ -1,0 +1,125 @@
+.sidebar {
+    width: 200px;
+    height: 100%; /* vh 대신 부모 기준으로 맞춤 */
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+
+
+.sidebarWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.SideImage{
+    width: 120px;
+    display: block;
+    margin: 40px auto 5px;
+    border-radius: 50%;
+}
+
+.sidebarName{
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 30px;
+    font-weight: normal;
+}
+
+.sidebarTitle {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.sidebarList {
+    flex-grow: 1; /* 리스트가 남는 공간을 차지하도록 설정 */
+    padding: 0;
+}
+
+.sidebarListItem {
+    display: flex;
+    align-items: center; /* 아이콘과 텍스트 수직 정렬 */
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebarListItem.active {
+    width: 162px;
+    background-color: #E0ECD1; /* 클릭한 아이템의 배경색 */
+    color: #154B11; /* 텍스트 색상 변경 */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sidebarIcon {
+    width: 26px;
+    height: 26px;
+    margin-left: 30px;
+    margin-right: 10px;
+}
+
+.logoutIcon{
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+    margin-left: 20px;
+}
+
+.logoutButton {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background-color: transparent; /* 배경색 제거 */
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 40px;
+    display: flex; /* 아이콘과 텍스트를 가로로 배치 */
+    align-items: center; /* 아이콘과 텍스트 수직 정렬 */
+}
+
+.logoutButton:hover {
+    text-decoration: underline; /* 마우스 호버 시 강조 */
+}
+
+.dropdownMenu {
+    list-style: none;
+    margin: 8px 0 16px 0;
+    padding-left: 66px;
+}
+
+.dropdownItem {
+    font-size: 14px;
+    padding: 8px 0;
+    color: #666666;
+    cursor: pointer;
+    text-align: left;
+}
+
+.dropdownItem:hover,
+.dropdownItem.active {
+    color: #1a5c2e; /* 강조 색상 (초록톤) */
+    font-weight: bold;
+}
+
+.dropdownArrow {
+    color : #154B11;
+    margin-left: 40px;
+    transition: transform 0.3s ease;
+}
+
+.dropdownArrow.open {
+    transform: rotate(180deg);
+}
